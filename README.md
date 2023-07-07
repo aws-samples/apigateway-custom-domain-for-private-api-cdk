@@ -45,7 +45,7 @@ Important: this application uses various AWS services and there are costs associ
    ```
 5. To deploy from the command line use the following:
     ```bash
-    cdk deploy
+    cdk deploy --require-approval never --concurrency 10
     ```
 
    _Note: Stack must be configured before it be deployed_.
