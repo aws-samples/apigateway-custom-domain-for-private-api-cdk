@@ -30,14 +30,20 @@ Important: this application uses various AWS services and there are costs associ
     ```bash
     cd apigateway-custom-domain-for-private
     ```
-3. Edit `lib/sample-stack.js` and adjust the following headers according to your environment:
+3. Install the dependencies:
+    ```bash
+    npm install -g aws-cdk
+    npm install
+    ```
+   
+4. Edit `lib/sample-stack.js` and adjust the following constants according to your environment:
 
    ```javascript
    const HOSTED_ZONE_ID = 'Z0000000XXXXXXXXXXXX';
    const HOSTED_ZONE_NAME = 'domain.com';
    const SERVICE_FQDN = 'api.domain.com';
    ```
-4. To deploy from the command line use the following:
+5. To deploy from the command line use the following:
     ```bash
     cdk deploy
     ```
@@ -50,6 +56,8 @@ Testing can be done using an EC2 instance to invoke the private API:
     ```bash
     aws ssm start-session --target <INSTANCE_ID>
     ```
+   _Note: It may take a few minutes for the instance to be available._
+
 
 2. Invoke the API FQDN using cURL
     ```bash

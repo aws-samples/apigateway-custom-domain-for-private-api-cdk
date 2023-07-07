@@ -1,0 +1,6 @@
+{
+  "app": "node bin/app.js",
+  "context": {
+    "@aws-cdk/customresources:installLatestAwsSdkDefault": false
+  }
+}
