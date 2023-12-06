@@ -1,10 +1,13 @@
 
 # Amazon API Gateway Custom Domain for Private API
 
-This CDK pattern implements the workaround solution described in the additional resources section.
-API calls to the fully qualified name (FQDN), such as private.domain.com, are resolved by Route53 to a Network Load Balancer (NLB) and forwarded to the API Gateway.
+This CDK pattern implements the workaround solution presented [here](https://serverlessland.com/repos/apigw-private-custom-domain-name).
+API calls to a fully qualified name (FQDN), such as private.domain.com, are resolved by Route53 to a Network Load Balancer (NLB) and forwarded to the API Gateway.
 
 Important: this application uses various AWS services and there are costs associated with these services after the Free Tier usage - please see the [AWS Pricing page](https://aws.amazon.com/pricing/) for details. You are responsible for any AWS costs incurred. No warranty is implied in this example.
+
+## Architecture
+![Architecture](resources/architecture.png)
 
 ## Requirements
 
@@ -28,7 +31,7 @@ Important: this application uses various AWS services and there are costs associ
     ```
 2. Change directory to the pattern directory its source code folder:
     ```bash
-    cd apigateway-custom-domain-for-private
+    cd apigateway-custom-domain-for-private-api-cdk
     ```
 3. Install the dependencies:
     ```bash
@@ -47,8 +50,6 @@ Important: this application uses various AWS services and there are costs associ
     ```bash
     cdk deploy --require-approval never --concurrency 10
     ```
-
-   _Note: Stack must be configured before it be deployed_.
 
 ## Testing
 Testing can be done using an EC2 instance to invoke the private API:
